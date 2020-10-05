@@ -1,6 +1,7 @@
 pipeline{
     agent{
-        docker { image 'hashicorp/terraform:latest' }
+        docker { image 'hashicorp/terraform:latest'
+                 args '--entrypoint=/bin/sh}
     }
     stages{
         stage("Build Infrastructur"){
