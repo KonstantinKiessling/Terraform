@@ -6,8 +6,9 @@ pipeline{
     stages{
         stage("Build Infrastructur"){
             steps{
-               sh 'terraform init'
-               sh 'terraform apply -auto-approve'
+               withCredentials([usernamePassword(credentialsId: 'AWS', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRE_ACCESS_KEY')]) {
+                sh 'terraform init'
+                sh 'terraform apply -auto-approve'
             }
         }
     }
