@@ -6,7 +6,8 @@ pipeline{
     stages{
         stage("Build Infrastructur"){
             steps{
-               sh 'echo Hallo'
+               sh 'terraform init'
+               sh 'terraform apply'
             }
         }
     }
