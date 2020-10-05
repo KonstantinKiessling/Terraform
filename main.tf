@@ -12,6 +12,6 @@ terraform{
 
 resource "aws_instance" "test"{
     instance_type = "t3.micro"
-    ami = "ami-0bb3fad3c0286ebd5 (64-bit x86)"
+    ami = "ami-0bb3fad3c0286ebd5"
     key_name = "AWSkey"
 }
